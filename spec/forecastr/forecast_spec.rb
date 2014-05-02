@@ -5,26 +5,12 @@ describe Forecastr::Forecast do
   let(:data) { Forecastr::DataContainer.new(json) }
   let(:forecast) { Forecastr::Forecast.new(data) }
 
-  it 'has a city' do
-    expect(forecast.city).to eq "London"
-  end
-
   it 'has time of sunrise' do
     expect(forecast.sunrise).to eq DateTime.parse("2014-03-21T05:59:29+00:00")
   end
 
   it 'has time of sunset' do
     expect(forecast.sunset).to eq DateTime.parse("2014-03-21 19:15:36 +0100")
-  end
-
-  describe 'coordinates' do
-    it 'has longitude' do
-      expect(forecast.longitude).to eq -0.13
-    end
-
-    it 'has latitude' do
-      expect(forecast.latitude).to eq 51.51
-    end
   end
 
   describe 'current forecast' do

@@ -3,14 +3,10 @@ require 'date'
 module Forecastr
   class Forecast
 
-    attr_reader :city, :longitude, :latitude, :temperature,
-                :pressure, :humidity, :min_temperature,
+    attr_reader :temperature, :pressure, :humidity, :min_temperature,
                 :max_temperature, :clouds, :wind, :sunrise, :sunset
 
     def initialize(data)
-      @city = data.city
-      @longitude = data.longitude
-      @latitude = data.latitude
       @temperature = Forecastr::Temperature.new(data.temperature)
       @pressure = data.pressure
       @humidity = data.humidity
